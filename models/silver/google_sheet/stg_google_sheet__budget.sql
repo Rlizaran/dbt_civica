@@ -1,8 +1,3 @@
-{{ config(
-    materialized='view',
-    tags = ['silver']
-) }}
-
 with source as (
 
     select * from {{ source('google_sheet', 'budget') }}

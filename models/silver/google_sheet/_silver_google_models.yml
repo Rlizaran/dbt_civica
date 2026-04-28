@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: stg_google_sheet__budget
+    config:
+      contract:
+        enforced: true
+    description: "Data about budget in demo."
+    columns:
+      - name:  _row
+        data_tests:
+          - not_null
+          - unique
+        data_type: integer
+        constraints:
+          - type: not_null
+        description: "incremental row number"
+      - name: product_id
+        description: "Surrogate key (hash of b_productkey) Unique product id"
+        data_tests:
+          - not_null
+          - unique
+        data_type: TEXT
+        constraints:
+          - type: not_null
+      - name: quantity
+        description: "Stock of the product"
+        data_tests:
+          - not_null
+        data_type: integer
+        constraints:
+          - type: not_null
+      - name: month
+        description: "YYYY-MM-DD"
+        data_tests:
+          - not_null
+        data_type: DATE
+        constraints:
+          - type: not_null
+      - name: _fivetran_synced
+        description: "date load"
+        data_tests:
+          - not_null
+        data_type: TIMESTAMP_TZ
+        constraints:
+          - type: not_null
