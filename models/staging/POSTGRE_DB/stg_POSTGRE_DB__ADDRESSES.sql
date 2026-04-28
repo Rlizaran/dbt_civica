@@ -3,10 +3,7 @@
     tags = ['silver']
 ) }}
 
-
-with 
-
-source as (
+with source as (
 
     select * from {{ source('POSTGRE_DB', 'ADDRESSES') }}
 
@@ -26,4 +23,4 @@ renamed as (
 
 )
 
-select * from address_casted
+select * from renamed

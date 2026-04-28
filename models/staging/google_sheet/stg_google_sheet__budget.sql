@@ -3,9 +3,7 @@
     tags = ['silver']
 ) }}
 
-with 
-
-source as (
+with source as (
 
     select * from {{ source('google_sheet', 'budget') }}
 
@@ -24,4 +22,4 @@ renamed as (
 
 )
 
-select * from budget_renamed
+select * from renamed
