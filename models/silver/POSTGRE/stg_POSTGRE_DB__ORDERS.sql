@@ -1,8 +1,3 @@
-{{ config(
-    materialized='view',
-    tags = ['silver']
-) }}
-
 with source as (
 
     select * from {{ source('POSTGRE_DB', 'ORDERS') }}

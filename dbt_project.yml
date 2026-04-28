@@ -43,5 +43,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_civica:
     # Applies to all files under models/tpch/
-    tpch:
+    silver:
       +materialized: table

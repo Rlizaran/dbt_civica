@@ -1,11 +1,4 @@
-{{ config(
-    materialized='view',
-    tags = ['silver']
-) }}
-
-with 
-
-source as (
+with source as (
 
     select * from {{ source('POSTGRE_DB', 'PROMOS') }}
 
