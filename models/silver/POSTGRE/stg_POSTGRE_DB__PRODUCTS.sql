@@ -13,8 +13,8 @@ renamed as (
         name,
         price,
         inventory,
-        _fivetran_deleted,
-        _fivetran_synced
+        _fivetran_deleted as date_deleted,
+        _fivetran_synced as date_load
 
     from source
 
