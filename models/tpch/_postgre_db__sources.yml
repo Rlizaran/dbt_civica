@@ -1,8 +1,8 @@
 version: 2
 
 sources:
-  - name: postgre_db
-    schema: postgre_db
+  - name: POSTGRE_DB
+    schema: POSTGRE_DB
     database: DEV_DB57_BRONZE_DB
   
     quoting:
@@ -17,7 +17,7 @@ sources:
       loaded_at_field: _FIVETRAN_SYNCED
 
     tables:
-      - name: addresses
+      - name: ADDRESSES
         columns:
           - name: ADDRESS_ID
           - name: ZIPCODE
@@ -27,7 +27,7 @@ sources:
           - name: _FIVETRAN_DELETED
           - name: _FIVETRAN_SYNCED
       
-      - name: orders
+      - name: ORDERS
         columns:
           - name: ORDER_ID
           - name: SHIPPING_SERVICE
@@ -45,7 +45,7 @@ sources:
           - name: _FIVETRAN_DELETED
           - name: _FIVETRAN_SYNCED
 
-      - name: orders_items
+      - name: ORDER_ITEMS
         columns:
           - name: ORDER_ID
           - name: PRODUCT_ID
@@ -53,7 +53,7 @@ sources:
           - name: _FIVETRAN_DELETED
           - name: _FIVETRAN_SYNCED
 
-      - name: products
+      - name: PRODUCTS
         columns:
           - name: PRODUCT_ID
           - name: PRICE
@@ -62,7 +62,7 @@ sources:
           - name: _FIVETRAN_DELETED
           - name: _FIVETRAN_SYNCED
 
-      - name: promos
+      - name: PROMOS
         columns:
           - name: PROMO_ID
           - name: DISCOUNT
@@ -70,7 +70,7 @@ sources:
           - name: _FIVETRAN_DELETED
           - name: _FIVETRAN_SYNCED
 
-      - name: users
+      - name: USERS
         columns:
           - name: USER_ID
           - name: UPDATED_AT
