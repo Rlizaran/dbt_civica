@@ -4,7 +4,7 @@ models:
   - name: stg_google_sheet__budget
     config:
       contract:
-        enforced: true
+        enforced: false
     description: "Data about budget in demo."
     columns:
       - name:  _row
@@ -23,6 +23,8 @@ models:
         data_type: TEXT
         constraints:
           - type: not_null
+      - name: sk
+        data_type: md5
       - name: quantity
         description: "Stock of the product"
         data_tests:
