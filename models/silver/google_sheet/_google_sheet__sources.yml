@@ -20,8 +20,13 @@ sources:
       - name: budget
         columns:
           - name: _row
-          - name: product_id
+            data_type: varchar
           - name: quantity
+            data_type: varchar
           - name: month
+            data_type: varchar
+          - name: product_id
+            data_type: varchar
           - name: _fivetran_synced
+            data_type: varchar
 
