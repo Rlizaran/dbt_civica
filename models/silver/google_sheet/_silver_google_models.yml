@@ -46,3 +46,18 @@ models:
         data_type: TIMESTAMP_TZ
         constraints:
           - type: not_null
+
+  - name: stg_google_sheet__user
+    config:
+      contract:
+        enforced: false
+    description: "Data about user in demo."
+    columns:
+          - name: Nombre
+            data_type: TEXT
+          - name: DNI
+            data_type: INT
+          - name: email
+            data_type: TEXT
+          - name: fecha_alta_sistema
+            data_type: TIMESTAMP_TZ

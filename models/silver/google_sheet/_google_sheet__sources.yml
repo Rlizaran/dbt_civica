@@ -30,3 +30,10 @@ sources:
           - name: _fivetran_synced
             data_type: varchar
 
+      - name: users
+        columns:
+          - name: Nombre
+          - name: DNI
+          - name: email
+          - name: fecha_alta_sistema
+
