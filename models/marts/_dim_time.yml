@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_time
+    config:
+      database: DEV_DB57_GOLD_DB
+    description: Spina temporal diaria para MetricFlow.
+    time_spine:
+      standard_granularity_column: date_day
+    columns:
+      - name: date_day
+        granularity: day
+

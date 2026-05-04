@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: fct_orders
+    config:
+        database: DEV_DB57_GOLD_DB
+
+    semantic_model:
+          enabled: true
+          name: orders  # Nombre lógico que usaremos en las consultas de MetricFlow
+    agg_time_dimension: order_date # Apunta al nombre de la dimensión que definiremos en el siguiente paso
+
+    columns:
+    - name: order_id             # PK del pedido
+      entity:
+        type: primary
+        name: orders          # ojo: 'order' a secas choca con la palabra reservada SQL.
+
+    - name: user_id             # FK al usuario
+      entity:
+        type: foreign
+        name: user
+    
+    - name: address_id
+      entity: 
+        type: foreign
+        name: address
+
+    - name: order_date             # la columna timestamp del pedido
+      granularity: day      # day | week | month | year. ¿Qué tiene sentido?
+      dimension:
+        type: time
+
+    - name: order_status             # status del pedido
+      dimension:
+        type: categorical
+
+    - name: address_country             # país (físicamente address_country)
+      dimension:
+        type: categorical
+        name: country            # cómo lo llamaremos al consultar
+    
+    metrics:
+      - name: total_revenue
+        label: Total revenue
+        type: simple
+        agg: sum
+        expr: order_total_amount
+
+      - name: total_orders
+        label: Total orders
+        type: simple
+        agg: count
+        expr: order_id
+
+      - name: total_unique_buyers
+        label: Total unique buyers
+        type: simple
+        agg: count_distinct
+        expr: user_id
+
